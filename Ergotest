@@ -1,0 +1,40 @@
+from typing import Dict, List, Union
+from datetime import date
+
+
+experiments: List[Dict] = []
+today: date = date.today()
+start_id: int = 100
+
+try:
+  if not isinstance(start_id, int):
+    raise ValueError("start_id muss eine Ganzzahl sein")
+
+  for i in range(10):
+      experiment: Dict = {
+          "id_number": start_id + i,
+          "experiment_leader": "Samuel",
+          "creation_date": today,
+          "test_number": i + 1
+      }
+      experiments.append(experiment)
+
+except ValueError or TypeError:
+  print("Fehler bei der Verarbeitung der Start-ID")
+
+finally:
+  pass
+
+
+for exp in experiments[:5]:
+    print(f"Experiment {exp['test_number']}:")
+    print(f"ID: {exp['id_number']}")
+    print(f"Versuchsleiter: {exp['experiment_leader']}")
+    print(f"Erstellungsdatum: {exp['creation_date']}")
+
+
+even_id_count: int = 0
+for i in range(len(experiments)):
+    if experiments[i]["id_number"] % 2 == 0:
+        even_id_count += 1
+print("Anzahl der Experimente mit gerader ID:", even_id_count)
