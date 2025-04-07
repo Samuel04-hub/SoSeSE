@@ -32,7 +32,7 @@ export-env {
       }
     }
 
-    let virtual_env = r#'C:\Programieren\SoSeSE\.venv'#
+    let virtual_env = r#'C:\Users\doell\Desktop\Hauke_Person\02_MCI\WS25\Sommer25_Software Engineering\Samuels Repository\SoSeSE\.venv'#
     let bin = r#'Scripts'#
 
     let is_windows = ($nu.os-info.family) == 'windows'

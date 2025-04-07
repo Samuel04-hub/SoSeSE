@@ -1,11 +1,13 @@
 @REM This file is UTF-8 encoded, so we need to update the current code page while executing it
-@for /f "tokens=2 delims=:." %%a in ('"%SystemRoot%\System32\chcp.com"') do @set _OLD_CODEPAGE=%%a
-
+@echo off
+@for /f "tokens=2 delims=:." %%a in ('"%SystemRoot%\System32\chcp.com"') do (
+    @set _OLD_CODEPAGE=%%a
+)
 @if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-@set "VIRTUAL_ENV=C:\Programieren\SoSeSE\.venv"
+@set "VIRTUAL_ENV=C:\Users\doell\Desktop\Hauke_Person\02_MCI\WS25\Sommer25_Software Engineering\Samuels Repository\SoSeSE\.venv"
 
 @set "VIRTUAL_ENV_PROMPT=sosese-3.13"
 @if NOT DEFINED VIRTUAL_ENV_PROMPT (
