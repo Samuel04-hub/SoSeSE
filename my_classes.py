@@ -15,7 +15,6 @@ class Subject(Person):
         # if_schleife kommt null von mir und nur von Chatler
         if today < birth_date.replace(year=today.year):
             age -= 1
-
         return age
     
     def estimate_max_hr(self, age, sex):
@@ -31,6 +30,9 @@ class Subject(Person):
 
     def get_age(self):
         return self.__age
+    
+    def get_max_hr(self):
+        return self.__max_hr
         
     
 class Supervisor(Person):

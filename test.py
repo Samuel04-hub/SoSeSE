@@ -4,7 +4,7 @@ if __name__ == "__main__":
 
     # Erstellen eines Leistungstests
     supervisor = Supervisor("FirstName", "LastName")
-    subject = Subject("FirstName", "LastName", "female", "1990-01-01")
+    subject = Subject("FirstName", "LastName", "female", "1995-01-01")
     subject.estimate_max_hr(subject.get_age(), subject.sex)
 
     experiment = Experiment("Leistungstest", "2021-01-01")
