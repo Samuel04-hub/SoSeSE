@@ -4,8 +4,8 @@ if __name__ == "__main__":
 
     # Erstellen eines Leistungstests
     supervisor = Supervisor("FirstName", "LastName")
-    subject = Subject("FirstName", "LastName", "female", 30)
-    subject.estimate_max_hr()
+    subject = Subject("FirstName", "LastName", "female", "1990-01-01")
+    subject.estimate_max_hr(subject.get_age(), subject.sex)
 
     experiment = Experiment("Leistungstest", "2021-01-01")
     experiment.add_subject(subject)

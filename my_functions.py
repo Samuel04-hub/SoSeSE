@@ -1,14 +1,13 @@
-def estimate_max_hr(age_years : int , sex : str) -> int:
+def set_max_hr(age: int , sex : str) -> int:
   """
   See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4124545/ Titel anhand dieser PMC-ID in Citavi-Projekt übernehmen for different formulas
   """
   if sex == "male":
-    max_hr_bpm =  223 - 0.9 * age_years
+    max_hr_bpm =  223 - 0.9 * age
   elif sex == "female":
-    max_hr_bpm = 226 - 1.0 *  age_years
+    max_hr_bpm = 226 - 1.0 *  age
   else:
-    # der input() öffnet ein Eingabefenster für den Nutzer und speichert die Eingabe
-    max_hr_bpm  = input("Enter maximum heart rate:")
+    raise ValueError("Invalid sex provided. Use 'male' or 'female'.")
   return int(max_hr_bpm)
 
 def build_person(first_name, last_name, sex, age) -> dict:
@@ -16,7 +15,7 @@ def build_person(first_name, last_name, sex, age) -> dict:
     person_dict = { "first_name" : first_name,
              "last_name" : last_name,
              "age" : age,
-             "estimate_max_hr" : estimate_max_hr(age,sex)}
+             "estimate_max_hr" : set_max_hr(age,sex)}
     return person_dict
 
 def build_experiment(experiment_name, date, supervisor, subject) -> dict:
