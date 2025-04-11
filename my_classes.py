@@ -21,7 +21,7 @@ class Subject(Person):
         return set_max_hr(age, sex)
     
     #Der Konstuktor wird leider erst hier auf geführt, damit calculate_age und set_max_hr früher definiert werden können.
-    def __init__(self, first_name, last_name, sex, date_of_birth):
+    def __init__(self, first_name : str, last_name : str, sex : str, date_of_birth : str):
         super().__init__(first_name, last_name)
         self.sex = sex
         self.__age = self.calculate_age(str(date_of_birth))
