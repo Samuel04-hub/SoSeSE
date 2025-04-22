@@ -1,6 +1,6 @@
-from my_functions import set_max_hr
 import json
 import requests
+from my_functions import set_max_hr
 
 class Person:
     def __init__(self, first_name, last_name):
