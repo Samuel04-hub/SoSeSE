@@ -6,13 +6,13 @@ class Person:
         self.last_name = last_name
 
 class Subject(Person):
-
+    #Leider muss ich die calculate_age Methode zuerst definieren, damit im Konstuktor kein Fehler auftritt, weil eine Funktion aufgerufen wird, bevor diese definiert wird.
     def calculate_age(self, date_of_birth):
         from datetime import datetime
         today = datetime.today()
         birth_date = datetime.strptime(date_of_birth, "%Y-%m-%d")
         age = today.year - birth_date.year
-       
+        # if_schleife kommt null von mir und nur von Chatler
         if today < birth_date.replace(year=today.year):
             age -= 1
         return age
@@ -20,7 +20,8 @@ class Subject(Person):
     def estimate_max_hr(self, age, sex):
         return set_max_hr(age, sex)
     
-    def __init__(self, first_name, last_name, sex, date_of_birth):
+    #Der Konstuktor wird leider erst hier auf geführt, damit calculate_age und set_max_hr früher definiert werden können.
+    def __init__(self, first_name : str, last_name : str, sex : str, date_of_birth : str):
         super().__init__(first_name, last_name)
         self.sex = sex
         self.__age = self.calculate_age(str(date_of_birth))
