@@ -1,3 +1,4 @@
+import requests
 def set_max_hr(age: int , sex : str) -> int:
   """
   See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4124545/ Titel anhand dieser PMC-ID in Citavi-Projekt übernehmen for different formulas
@@ -55,3 +56,14 @@ def ask_sex() -> str:
     else:
         print("Please enter 'w' or 'm'")
         ask_sex()
+
+def delete_person(id: int):
+    ## Update a person
+    # Define the URL of the API
+    url = "http://127.0.0.1:5000/person/" + str(id)
+
+    # Send a POST request to the API
+    response = requests.delete(url)
+
+    # Print the response from the server
+    print(response.text)
