@@ -1,9 +1,12 @@
 from my_functions import set_max_hr
+import json
+import requests
 
 class Person:
     def __init__(self, first_name, last_name):
         self.first_name = first_name
         self.last_name = last_name
+
 
 class Subject(Person):
     #Leider muss ich die calculate_age Methode zuerst definieren, damit im Konstuktor kein Fehler auftritt, weil eine Funktion aufgerufen wird, bevor diese definiert wird.
